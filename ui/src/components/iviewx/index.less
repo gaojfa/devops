@@ -1,0 +1,351 @@
+@import '~view-design/src/styles/index.less';
+@import '../common/css/main.less';
+
+@text-color: @main-font-color;
+
+@primary-color: @main-primary-color;
+@error-color: @main-error-color;
+@success-color: @main-success-color;
+@info-color: @main-info-color;
+@input-disabled-bg: @main-disable-color;
+
+@border-color-base: @main-border-color;
+@border-color-split: @main-border-color-light;
+
+@border-radius-small: 2px;
+@border-radius: 2px;
+
+.@{page-prefix-cls} {
+  &-item {
+    display: none;
+
+    &-active {
+      display: inline-block;
+
+      a, &:hover a {
+        color: @text-color;
+      }
+    }
+  }
+
+  &-item-jump-prev, &-item-jump-next {
+    display: none;
+  }
+
+  &.mini &-prev,
+  &.mini &-next {
+    border: 1px solid @border-color-base;
+  }
+
+  &.mini &-prev&-disabled,
+  &.mini &-next&-disabled {
+    border: 0;
+  }
+
+  &-prev,
+  &-next {
+    .@{icon-prefix-cls} {
+      font-weight: 800;
+      color: @text-color;
+      font-size: 15px;
+    }
+
+    &:hover {
+      .@{icon-prefix-cls} {
+        font-weight: 800;
+        color: @text-color;
+        font-size: 15px;
+      }
+    }
+  }
+
+  &-disabled {
+    .@{icon-prefix-cls} {
+      font-weight: 400;
+      color: #ccc;
+    }
+    &:hover {
+      .@{icon-prefix-cls} {
+        font-weight: 400;
+        color: #ccc;
+      }
+    }
+  }
+}
+
+.@{table-prefix-cls} {
+  &-cell {
+    a {
+      padding-right: 5px;
+      text-decoration: underline;
+      display: inline-block;
+    }
+  }
+
+  &-cell-with-selection {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  th {
+    background-color: #eeeeee;
+  }
+
+  td
+  {
+    height: 58px;
+  }
+}
+
+.sortable() {
+  i {
+    &.on {
+      color: #106dcf;
+    }
+  }
+}
+
+.@{input-prefix-cls} {
+  &-icon {
+    cursor: pointer;
+  }
+
+  &-icon-normal + &,
+  &-with-suffix {
+    padding-right: 25px;
+  }
+}
+
+.@{form-prefix-cls} {
+  padding-top: 5px;
+
+  .ivu-input-wrapper,
+  .ivu-select {
+    margin-top: -6px;
+  }
+
+  .@{form-item-prefix-cls}-label {
+    line-height: 1.5;
+    padding: 0px 12px 0px 0px;
+  }
+}
+
+.@{form-item-prefix-cls} {
+  margin-bottom: 0px;
+  padding: 2px 2px 10px 2px;
+
+  &-error {
+    margin-bottom: 20px;
+  }
+
+  &-error-tip {
+    padding-top: 3px;
+  }
+
+  &-content {
+    line-height: 1.5;
+  }
+}
+
+.@{date-picker-prefix-cls} {
+  &-cells {
+    &-focused {
+      em {
+        box-shadow: 0 0 0 0 @primary-color inset;
+      }
+    }
+  }
+}
+
+.input() {
+  textarea& {
+    font-size: 12px;
+  }
+}
+
+.@{breadcrumb-prefix-cls} {
+  color: @text-color;
+  font-size: 12px;
+
+  &-item-separator {
+    margin: 0 5px;
+    color: @text-color;
+  }
+
+  a {
+    color: @primary-color;
+    text-decoration: underline;
+  }
+}
+
+.@{tag-prefix-cls} {
+  &-primary,
+  &-primary&-dot &-dot-inner {
+    background: @main-active-color;
+  }
+
+  &-dot{
+    border: 1px solid @main-background-color !important;
+  }
+}
+
+.@{modal-prefix-cls} {
+  &-content {
+    border-radius: 8px;
+  }
+
+  &-close {
+    top: 6px;
+    color: #fff;
+
+    .ivu-icon-ios-close {
+      color: #fff!important;
+    }
+  }
+
+  &-header {
+    background-color: @main-dark-color;
+    border-radius: 6px 6px 0 0;
+    padding: 12px 20px;
+
+    p, &-inner {
+      color: #fff;
+    }
+  }
+
+  &-body {
+    padding: 30px;
+  }
+
+  &-footer {
+    border-radius: 0 0 6px 6px;
+
+    .@{btn-prefix-cls} {
+      width: 95px;
+      border-radius: 14px;
+      padding: 4px;
+
+      &-primary {
+        background-color: @main-dark-color;
+        border-color: @main-dark-color;
+      }
+    }
+  }
+}
+
+.@{tree-prefix-cls} {
+  padding-left: 10px;
+
+  &-title {
+    color: @main-font-color;
+    font-weight: bold;
+  }
+}
+
+.@{loading-bar-prefix-cls} {
+  &-inner {
+    &-color-primary {
+      background-color: @main-active-color;
+    }
+  }
+}
+
+.@{progress-prefix-cls} {
+  &-inner {
+    background-color: @main-disable-color;
+  }
+}
+
+.@{menu-prefix-cls} {
+  &-vertical{
+    &.@{menu-prefix-cls}-light{
+      background: none;
+      &:after{
+        background: none;
+      }
+    }
+  }
+
+  &-vertical &-item,
+  &-vertical &-submenu-title
+  {
+    padding: 10px 4px 10px 14px;
+    &:hover{
+      color: inherit;
+    }
+  }
+
+  &-light&-vertical &-item{
+    &-active:not(.@{menu-prefix-cls}-submenu){
+      &:before{
+        content: '';
+        display: block;
+        width: 3px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background: @primary-color;
+      }
+    }
+  }
+
+  &-light&-vertical &-item{
+    &-active:not(.@{menu-prefix-cls}-submenu){
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+
+.checkboxFn(@checkbox-prefix-cls: ~"@{css-prefix}checkbox") {
+  .@{checkbox-prefix-cls} {
+    margin-right: 1px;
+  }
+
+  .@{checkbox-prefix-cls}-wrapper {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+.@{radio-group-button-prefix-cls} {
+  .@{radio-prefix-cls}-wrapper {
+    &-checked {
+      background: @main-active-color;
+      color: #fff;
+      border-color: @main-active-color;
+
+      &:hover {
+        color: #fff;
+        border-color: @main-active-color;
+      }
+
+      &:active {
+        color: #fff;
+        border-color: @main-active-color;
+      }
+
+      &:first-child {
+        border-color: @main-active-color;
+      }
+    }
+  }
+}
+
+.@{tabs-prefix-cls} {
+  & {
+    .@{tabs-prefix-cls}-tabpane {
+      padding: 0px 1px;
+    }
+  }
+}
+
+.@{select-dropdown-prefix-cls} {
+  width: auto;
+}
+
+.ivu-input[disabled], fieldset[disabled] .ivu-input {
+  background-color: #f5f7fa;
+}
